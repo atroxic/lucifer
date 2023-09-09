@@ -1,5 +1,6 @@
-import 'dart:isolate';
+@Tags(['parallel_test'])
 
+import 'dart:isolate';
 import 'package:lucifer/lucifer.dart';
 import 'package:test/test.dart';
 

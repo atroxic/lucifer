@@ -1,3 +1,5 @@
+@Tags(['route_matcher_test'])
+
 import 'dart:async';
 
 import 'package:lucifer/lucifer.dart';
@@ -18,17 +20,15 @@ void main() {
       Route(method: Method.get, path: '/a/:id/go', callback: _callback),
       Route(method: Method.get, path: '/a', callback: _callback),
       Route(
-        method: Method.get,
-        path: '/b/a/:input/another',
-        callback: _callback,
-      ),
+          method: Method.get, path: '/b/a/:input/another', callback: _callback),
       Route(method: Method.get, path: '/b/a/:input', callback: _callback),
       Route(method: Method.get, path: '/b/B/:input', callback: _callback),
       Route(method: Method.get, path: '/[a-z]/yep', callback: _callback),
     ];
 
     expect(match('/a', testRoutes), ['/a']);
-    expect(match('/a?query=true', testRoutes), ['/a']);
+    expect(match('/a?query=true', testRoutes), ['/a'],
+        reason: 'Something misfired');
     expect(match('/a/123/go', testRoutes), ['/a/:id/go']);
     expect(match('/a/123/go/a', testRoutes), <String>[]);
     expect(

@@ -1,3 +1,4 @@
+@Tags(['rate_limiter_test'])
 import 'package:lucifer/lucifer.dart';
 import 'package:test/test.dart';
 

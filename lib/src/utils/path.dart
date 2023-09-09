@@ -4,6 +4,10 @@
 String cleanPath(String path) {
   path = path.trim();
 
+  if (path.contains('?')) {
+    return cleanPath(path.substring(0, path.indexOf('?')));
+  }
+
   if (path.startsWith('/')) {
     return cleanPath(path.substring(1));
   }

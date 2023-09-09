@@ -11,8 +11,8 @@ FutureOr _serializable(Req req, Res res, data) async {
   } on NoSuchMethodError catch (e) {
     throw HttpServerException(
       500,
-      message: e.toString(),
-      stackTrace: e.stackTrace,
+      message: "An error occurred.",
+      // stackTrace: e.stackTrace,
     );
   }
 }

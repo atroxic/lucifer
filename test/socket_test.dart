@@ -1,3 +1,5 @@
+@Tags(['socket_test'])
+
 import 'dart:io';
 
 import 'package:lucifer/lucifer.dart';

@@ -1,3 +1,5 @@
+@Tags(['static_test'])
+
 import 'package:lucifer/lucifer.dart';
 import 'package:test/test.dart';
 

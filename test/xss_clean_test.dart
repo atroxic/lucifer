@@ -1,3 +1,5 @@
+@Tags(['xss_clean_test'])
+
 import 'package:lucifer/lucifer.dart';
 import 'package:test/test.dart';
 

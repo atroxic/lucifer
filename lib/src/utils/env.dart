@@ -1,13 +1,10 @@
-import 'package:dotenv/dotenv.dart' as d;
+import 'package:dotenv/dotenv.dart';
 
 /// get environment variable value based on key
 dynamic env(String key) {
-  String? value = d.env[key];
+  var env = DotEnv(includePlatformEnvironment: true)..load();
 
-  if (value == null) {
-    d.load();
-    value = d.env[key];
-  }
+  String? value = env[key];
 
   if (value != null) {
     try {

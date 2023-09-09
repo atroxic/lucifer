@@ -4,19 +4,10 @@ import 'dart:io';
 import 'package:lucifer/lucifer.dart';
 import 'package:queue/queue.dart';
 
-import 'controller/controller.dart';
 import 'handlers/handlers.dart';
 import 'parsers/form_parser.dart';
-import 'route/route.dart';
 import 'route/route_matcher.dart';
-import 'route/router.dart';
-import 'exceptions.dart';
 import 'local.dart';
-import 'method.dart';
-import 'request.dart';
-import 'response.dart';
-import 'socket.dart';
-import 'typedef.dart';
 
 ///
 /// Lucifer Core App
@@ -768,7 +759,7 @@ class App {
       host = defaultHost;
     }
 
-    assert(port is int && host is String, 'Invalid parameter');
+    // assert(port is int && host is String, 'Invalid parameter');
 
     if (_useSecure) {
       // bind https server to specified port

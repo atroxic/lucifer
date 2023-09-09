@@ -20,7 +20,7 @@ void main() {
   test('it should redirect', () async {
     app.get('/', (req, res) => res.send('Home'));
 
-    final res = await http.get(Uri.parse('$baseUrl/'));
+    await http.get(Uri.parse('$baseUrl/'));
     // expect(res.headers['content-type'], 'image/png');
   });
 }

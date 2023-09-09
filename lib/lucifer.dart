@@ -20,6 +20,6 @@ export 'src/socket.dart';
 export 'src/typedef.dart';
 export 'src/uploaded_file.dart';
 
-export 'package:dart_jsonwebtoken/src/errors.dart';
+// export 'package:dart_jsonwebtoken/src/errors.dart';
 export 'package:http_status_code/http_status_code.dart';
 export 'package:logger/logger.dart';

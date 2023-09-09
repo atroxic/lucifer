@@ -9,6 +9,7 @@ String blacklist(data, String chars) {
     return data;
   }
 
+  // ignore: prefer_interpolation_to_compose_strings
   RegExp pattern = RegExp('[' + chars + ']+');
   return data.replaceAll(pattern, '');
 }

@@ -13,7 +13,7 @@ import '../typedef.dart';
 /// with other logging method.
 ///
 Callback logger({
-  Level level = Level.verbose,
+  Level level = Level.trace,
   LogPrinter? printer,
 }) {
   Logger.level = level;
@@ -23,7 +23,7 @@ Callback logger({
   );
   return (Req req, Res res) async {
     Log log = Log();
-    log.v = logger.v;
+    log.v = logger.t;
     log.d = logger.d;
     log.i = logger.i;
     log.w = logger.w;

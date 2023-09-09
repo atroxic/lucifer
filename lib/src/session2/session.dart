@@ -6,11 +6,11 @@ import 'package:uuid/uuid.dart';
 
 class Session implements HttpSession {
   bool _destroyed = false;
-  bool _isNew = true;
-  DateTime _lastSeen;
+  final bool _isNew = true;
+  final DateTime _lastSeen;
   Function? _timeoutCallback;
 
-  SessionManager _sessionManager;
+  final SessionManager _sessionManager;
 
   Session? _prev;
   Session? _next;
@@ -37,10 +37,10 @@ class Session implements HttpSession {
     _sessionManager._sessions.remove(id);
   }
 
-  void _markSeen() {
-    _lastSeen = DateTime.now();
-    _sessionManager._bumpToEnd(this);
-  }
+  // void _markSeen() {
+  //   _lastSeen = DateTime.now();
+  //   _sessionManager._bumpToEnd(this);
+  // }
 
   @override
   set onTimeout(void Function() callback) {
@@ -167,10 +167,10 @@ class SessionManager {
     _stopTimer();
   }
 
-  void _bumpToEnd(Session session) {
-    _removeFromTimeoutQueue(session);
-    _addToTimeoutQueue(session);
-  }
+  // void _bumpToEnd(Session session) {
+  //   _removeFromTimeoutQueue(session);
+  //   _addToTimeoutQueue(session);
+  // }
 
   void _addToTimeoutQueue(Session session) {
     if (_head == null) {

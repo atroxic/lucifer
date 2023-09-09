@@ -159,6 +159,7 @@ class Res {
       return get(name);
     } else {
       set(name, value);
+      return name;
     }
   }
 
@@ -547,5 +548,6 @@ extension FileExtension on File {
         return ContentType(types[0], types[1]);
       }
     }
+    return null;
   }
 }

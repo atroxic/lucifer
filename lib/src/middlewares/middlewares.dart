@@ -10,6 +10,5 @@ export 'raw.dart';
 export 'security.dart';
 export 'session.dart';
 export 'static.dart';
-export 'text.dart';
 export 'urlencoded.dart';
 export 'xss_clean.dart';

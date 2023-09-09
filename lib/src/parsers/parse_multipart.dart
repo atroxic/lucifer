@@ -1,9 +1,9 @@
-import 'dart:io';
-
 import '../uploaded_file.dart';
 import '../multipart.dart';
 import '../request.dart';
 import 'parse_urlencoded.dart';
+
+import 'dart:typed_data';
 
 ///
 /// Parse multipart request into map body and uploaded files

@@ -61,7 +61,7 @@ class Route {
   ///
   static RegExp _matcher(String path) {
     // Clean path
-    path = '/' + cleanPath(path);
+    path = '/${cleanPath(path)}';
 
     // Parse segments from route path
     final segments = Uri.parse(path).pathSegments;

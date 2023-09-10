@@ -4,11 +4,15 @@
 String cleanPath(String path) {
   path = path.trim();
 
+  if (path.contains('?')) {
+    return cleanPath(path.substring(0, path.indexOf('?')));
+  }
+
   if (path.startsWith('/')) {
     return cleanPath(path.substring(1));
   }
 
-  if (path.trim().endsWith('/')) {
+  if (path.endsWith('/')) {
     return cleanPath(path.substring(0, path.length - 1));
   }
 

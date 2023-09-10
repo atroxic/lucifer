@@ -11,7 +11,7 @@ void main() {
     await app.listen(3000);
   });
 
-  tearDown(() => app.close());
+  tearDown(() => app.close(force: true));
 
   test('it can compose requests', () async {
     var path = app.router();

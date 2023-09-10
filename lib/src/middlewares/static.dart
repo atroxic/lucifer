@@ -1,8 +1,6 @@
 import 'dart:io';
 
-import '../request.dart';
-import '../response.dart';
-import '../typedef.dart';
+import 'package:lucifer/lucifer.dart';
 import '../utils/path.dart';
 
 ///
@@ -17,5 +15,7 @@ Callback static(String directory) {
     if (file.existsSync()) {
       await res.sendFile(file);
     }
+
+    print('Got here');
   };
 }

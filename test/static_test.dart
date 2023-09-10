@@ -1,3 +1,5 @@
+@Tags(['static_test'])
+
 import 'package:lucifer/lucifer.dart';
 import 'package:test/test.dart';
 
@@ -10,12 +12,12 @@ void main() {
 
   setUp(() async {
     app = App();
-    port = 3000;
+    port = 3001;
     await app.listen(port);
     baseUrl = 'http://${app.host}:${app.port}';
   });
 
-  tearDown(() => app.close());
+  tearDown(() => app.close(force: true));
 
   test('it should return image', () async {
     app.use(static('test/files'));
@@ -23,6 +25,7 @@ void main() {
 
     final res = await http.get(Uri.parse('$baseUrl/image.png'));
     print(res.headers);
+    expect(res.statusCode, 200);
     expect(res.headers['content-type'], 'image/png');
   });
 
@@ -32,6 +35,7 @@ void main() {
 
     final res = await http.get(Uri.parse('$baseUrl/files/image.png'));
     print(res.headers);
+    expect(res.statusCode, 200);
     expect(res.headers['content-type'], 'image/png');
   });
 }

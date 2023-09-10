@@ -1,3 +1,5 @@
+@Tags(['socket_test'])
+
 import 'dart:io';
 
 import 'package:lucifer/lucifer.dart';
@@ -10,12 +12,12 @@ main() {
 
   setUp(() async {
     app = App();
-    port = 3000;
+    port = 8001;
     await app.listen(port);
     baseUrl = 'ws://${app.host}:${app.port}';
   });
 
-  tearDown(() => app.close());
+  tearDown(() => app.close(force: true));
 
   test('it can handle web sockets', () async {
     bool isOpened = false;
@@ -33,6 +35,7 @@ main() {
       });
       await socket.listen();
     });
+    print(baseUrl);
 
     WebSocket client = await WebSocket.connect(baseUrl);
     client.add('detective');

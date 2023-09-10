@@ -1,5 +1,6 @@
-import 'dart:isolate';
+@Tags(['parallel_test'])
 
+import 'dart:isolate';
 import 'package:lucifer/lucifer.dart';
 import 'package:test/test.dart';
 
@@ -37,7 +38,7 @@ main() {
     }
   });
 
-  tearDown(() => app.close());
+  tearDown(() => app.close(force: true));
 
   test('it should run parallel apps correctly', () async {
     final res = await http.get(Uri.parse(baseUrl));

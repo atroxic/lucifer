@@ -15,7 +15,7 @@ void main() {
     baseUrl = 'http://${app.host}:${app.port}';
   });
 
-  tearDown(() => app.close());
+  tearDown(() => app.close(force: true));
 
   test('it should redirect', () async {
     app.get('/', (req, res) => res.send('Home'));

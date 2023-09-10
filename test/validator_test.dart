@@ -1,3 +1,5 @@
+@Tags(['validator_test'])
+
 import 'package:lucifer/lucifer.dart';
 import 'package:test/test.dart';
 
@@ -15,7 +17,7 @@ void main() {
     baseUrl = 'http://${app.host}:${app.port}';
   });
 
-  tearDown(() => app.close());
+  tearDown(() => app.close(force: true));
 
   test('it should redirect', () async {
     app.get('/', (req, res) => res.send('Home'));

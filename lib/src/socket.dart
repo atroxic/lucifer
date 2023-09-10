@@ -30,8 +30,8 @@ class SocketServer {
   }
 
   Future<void> listen() async {
-    res.closed = true;
     WebSocket socket = await req.socket;
+    res.closed = true;
 
     _onOpen?.call(socket);
 

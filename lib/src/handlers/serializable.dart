@@ -8,10 +8,11 @@ FutureOr _serializable(Req req, Res res, data) async {
   try {
     data = data.toJson();
     await res.json(data);
+    // ignore: unused_catch_clause
   } on NoSuchMethodError catch (e) {
     throw HttpServerException(
       500,
-      message: "An error occurred.",
+      message: 'An error occurred.',
       // stackTrace: e.stackTrace,
     );
   }
